@@ -26,9 +26,9 @@
   '((t (:foreground "#aaffff")))
   "uppercase identifier")
 
-(defface lwsd-uppercase-identifier-face
+(defface lwsd-staging-symbol-face
   '((t (:foreground "#ffffaa")))
-  "uppercase identifier")
+  "staging symbols")
 
 (define-generic-mode lwsd-mode
   nil
