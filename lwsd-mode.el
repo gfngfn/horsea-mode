@@ -1,6 +1,6 @@
-;;; lwsd-mode.el --- A major mode for editing Lightweight Staged Dependent Types programs.  -*- lexical-binding: t; -*-
+;;; lwsd-mode.el --- A major mode for editing Staged Shape-Dependent Types programs.  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2024  Takashi SUWA
+;; Copyright (C) 2026  Takashi SUWA
 
 ;; Author: Takashi SUWA <bd.gfngfn[at]gmail.com>
 ;; Keywords: languages
@@ -14,9 +14,9 @@
   :prefix "lwsd-"
   :group 'languages)
 
-(defface lwsd-tag-face
+(defface lwsd-application-label-face
   '((t (:foreground "#88ffaa")))
-  "tags")
+  "application labels")
 
 (defface lwsd-type-variable-face
   '((t (:foreground "#ff88dd")))
@@ -27,26 +27,25 @@
   "uppercase identifier")
 
 (defface lwsd-staging-symbol-face
-  '((t (:foreground "#ffffaa")))
+  '((t (:foreground "#ff88aa")))
   "staging symbols")
 
 (define-generic-mode lwsd-mode
   nil
-  '("let" "rec" "and" "in" "fun"
-    "if" "then" "else" "true" "false"
-    "do" "end" "case" "of"
-    "val" "type" "module" "struct" "signature" "sig" "with"
-    "external" "include" "import" "pack" "unpack" "assert" "open")
+  '("fun" "rec" "let" "in"
+    "if" "then" "else" "as" "val" "module" "struct" "end"
+    "external" "open" "true" "false" "forall")
   '(("\\([A-Z][A-Za-z0-9_]+\\)\\>"
      (1 'lwsd-uppercase-identifier-face t))
-    ("\\(\\$[a-z0-9_]+\\)\\>"
+    ("\\('[a-z0-9_]+\\)\\>"
      (1 'lwsd-type-variable-face t))
-    ("\\(%\\|&\\|~\\)\\>")
-     (1 'lwsd-staging-symbol-face t))
+    ("\\(\\#[a-z0-9_]+\\)\\>"
+     (1 'lwsd-application-label-face t))
+    ("\\(%\\|&\\|~\\)"
+     (1 'lwsd-staging-symbol-face t)))
   nil
   nil
   "A major mode for editing Lwsd programs.")
-
 
 (provide 'lwsd-mode)
 ;;; lwsd-mode.el ends here
