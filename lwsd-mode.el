@@ -33,7 +33,8 @@
 (define-generic-mode lwsd-mode
   nil
   '("fun" "rec" "let" "in"
-    "if" "then" "else" "as" "val" "module" "struct" "end"
+    "if" "then" "else" "case" "of" "as"
+    "val" "type" "module" "struct" "end"
     "external" "open" "true" "false" "forall")
   '(("\\([A-Z][A-Za-z0-9_]+\\)\\>"
      (1 'lwsd-uppercase-identifier-face t))
