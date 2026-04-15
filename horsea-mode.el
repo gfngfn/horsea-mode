@@ -1,4 +1,4 @@
-;;; lwsd-mode.el --- A major mode for editing Staged Shape-Dependent Types programs.  -*- lexical-binding: t; -*-
+;;; horsea-mode.el --- A major mode for editing programs in Horsea (Staged Shape-Dependent Types).  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2026  Takashi SUWA
 
@@ -9,44 +9,44 @@
 
 ;;; Code:
 
-(defgroup lwsd nil
-  "Lwsd"
-  :prefix "lwsd-"
+(defgroup horsea nil
+  "Horsea"
+  :prefix "horsea-"
   :group 'languages)
 
-(defface lwsd-application-label-face
+(defface horsea-application-label-face
   '((t (:foreground "#88ffaa")))
   "application labels")
 
-(defface lwsd-type-variable-face
+(defface horsea-type-variable-face
   '((t (:foreground "#ff88dd")))
   "type variables")
 
-(defface lwsd-uppercase-identifier-face
+(defface horsea-uppercase-identifier-face
   '((t (:foreground "#aaffff")))
   "uppercase identifier")
 
-(defface lwsd-staging-symbol-face
+(defface horsea-staging-symbol-face
   '((t (:foreground "#ff88aa")))
   "staging symbols")
 
-(define-generic-mode lwsd-mode
+(define-generic-mode horsea-mode
   nil
   '("fun" "rec" "let" "in"
     "if" "then" "else" "case" "of" "as"
     "val" "type" "module" "struct" "end"
     "external" "open" "true" "false" "forall")
   '(("\\([A-Z][A-Za-z0-9_]+\\)\\>"
-     (1 'lwsd-uppercase-identifier-face t))
+     (1 'horsea-uppercase-identifier-face t))
     ("\\('[a-z0-9_]+\\)\\>"
-     (1 'lwsd-type-variable-face t))
+     (1 'horsea-type-variable-face t))
     ("\\(\\#[a-z0-9_]+\\)\\>"
-     (1 'lwsd-application-label-face t))
+     (1 'horsea-application-label-face t))
     ("\\(%\\|&\\|~\\)"
-     (1 'lwsd-staging-symbol-face t)))
+     (1 'horsea-staging-symbol-face t)))
   nil
   nil
-  "A major mode for editing Lwsd programs.")
+  "A major mode for editing programs in Horsea (Staged Shape-Dependent Types).")
 
-(provide 'lwsd-mode)
-;;; lwsd-mode.el ends here
+(provide 'horsea-mode)
+;;; horsea-mode.el ends here
