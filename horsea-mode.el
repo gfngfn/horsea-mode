@@ -32,10 +32,26 @@
 
 (define-generic-mode horsea-mode
   nil
-  '("fun" "rec" "let" "in"
-    "if" "then" "else" "case" "of" "as"
-    "val" "type" "module" "struct" "end"
-    "external" "open" "true" "false" "forall")
+  '("as"
+    "case"
+    "else"
+    "end"
+    "external"
+    "false"
+    "forall"
+    "fun"
+    "if"
+    "in"
+    "let"
+    "module"
+    "of"
+    "open"
+    "rec"
+    "struct"
+    "then"
+    "true"
+    "type"
+    "val")
   '(("\\([A-Z][A-Za-z0-9_]+\\)\\>"
      (1 'horsea-uppercase-identifier-face t))
     ("\\('[a-z0-9_]+\\)\\>"
