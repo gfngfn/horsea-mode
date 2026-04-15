@@ -1,6 +1,6 @@
 ;;; horsea-mode.el --- A major mode for editing programs in Horsea (Staged Shape-Dependent Types).  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2026  Takashi SUWA
+;; Copyright (C) 2025-2026 Takashi SUWA
 
 ;; Author: Takashi SUWA <bd.gfngfn[at]gmail.com>
 ;; Keywords: languages
