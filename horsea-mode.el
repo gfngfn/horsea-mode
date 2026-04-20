@@ -52,11 +52,11 @@
     "true"
     "type"
     "val")
-  '(("\\([A-Z][A-Za-z0-9_]+\\)\\>"
+  '(("\\([A-Z][A-Za-z0-9_]*\\)\\>"
      (1 'horsea-uppercase-identifier-face t))
-    ("\\('[a-z0-9_]+\\)\\>"
+    ("\\('[a-z_][A-Za-z0-9_]*\\)\\>"
      (1 'horsea-type-variable-face t))
-    ("\\(\\#[a-z0-9_]+\\)\\>"
+    ("\\(\\(?:\\#\\|\\?\\)[a-z_][A-Za-z0-9_]*\\)\\>"
      (1 'horsea-application-label-face t))
     ("\\(%\\|&\\|~\\)"
      (1 'horsea-staging-symbol-face t)))
